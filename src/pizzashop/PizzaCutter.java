@@ -15,12 +15,28 @@ package pizzashop;
  * creating this example:
  * Freeman, E.Freeman, E., Sierra, K., & Bates, B. (2004). Head First Design patterns. Sebastopol, CA: O'Reilly.
  * @author dancye
+ * @modified by: Muhammad Arham
  */
 public class PizzaCutter 
 {
+//    step 2
+    private static PizzaCutter onlyObject = null;
+    
     public int numSlices = 0;// how many pieces to cut the pizza into
+    
+//    step 1
     public PizzaCutter()
     {
         //intentionally left blank
+    }
+    
+//    step 3 provide object to other classes
+    public static PizzaCutter getInstance()
+    {
+        if (onlyObject == null)
+        {
+            onlyObject = new PizzaCutter();
+        }
+        return onlyObject;
     }
 }

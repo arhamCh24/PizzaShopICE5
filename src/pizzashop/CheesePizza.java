@@ -7,6 +7,7 @@ package pizzashop;
  * creating this example:
  * Freeman, E.Freeman, E., Sierra, K., & Bates, B. (2004). Head First Design patterns. Sebastopol, CA: O'Reilly.
  * @author dancye
+ * @modified by: Muhammad Arham
  */
 public class CheesePizza extends Pizza
 {
@@ -15,10 +16,6 @@ public class CheesePizza extends Pizza
         super();
         super.addTopping("cheese");
     }
-    public void bake(int temp)
-    {
-        super.bakeTemp = temp;
-        //do some baking here, code not implemented yet
-        //not necessary for the review
-    }
+    
+    // // I removed bake method from here to fix the SRP issue
 }

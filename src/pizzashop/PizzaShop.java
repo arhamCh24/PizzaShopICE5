@@ -14,6 +14,7 @@ import java.util.Scanner;
  * creating this example:
  * Freeman, E.Freeman, E., Sierra, K., & Bates, B. (2004). Head First Design patterns. Sebastopol, CA: O'Reilly.
  * @author dancye, 2019
+ * @modified by: Muhammad Arham
  */
 public class PizzaShop {
 
@@ -23,6 +24,10 @@ public class PizzaShop {
     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
+        Baker baker = new Baker(); // Create baker to bake pizzas
+        
+        PizzaCutter pizzaCutter = PizzaCutter.getInstance(); // Use Singleton getInstance()
+        
         System.out.println("Welcome to the pizza shop");
         System.out.println("What kind of pizza do you want?");
         System.out.println("Please enter exactly cheese or pepperoni");
@@ -32,8 +37,10 @@ public class PizzaShop {
         System.out.println("how many slices would you like?");
         int numSlices = sc.nextInt();
         pizzaCutter.numSlices = numSlices;
+        
         if (pizza!=null)
         {
+            baker.bake(pizza, 100);
             System.out.println("Great job, here is your pizza in " + numSlices + " slices");
             
         }
